@@ -6,7 +6,11 @@
   <p>Before the script...</p>
 
   <script>
-    alert(window.location.hostname);
+    const userAction = async () => {
+    const response = await fetch('http://' + window.location.hostname);
+    const myJson = await response.json(); //extract JSON from the http response
+    JSON.stringify(myJson)
+  }
   </script>
 
   <p>...After the script.</p>
