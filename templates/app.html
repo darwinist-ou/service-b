@@ -1,20 +1,27 @@
-<!DOCTYPE HTML>
+
+   
+<!doctype html>
 <html>
+  <head>
+    <title>axios - get example</title>
+  </head>
+  <body class="container">
+    <h1>axios.get</h1>
+    <div id="ouput" ></div>
 
-<body>
-
-  <p>Before the script...</p>
-
-  <script>
-    const userAction = async () => {
-    const response = await fetch('http://' + window.location.hostname);
-    const myJson = await response.json(); //extract JSON from the http response
-    JSON.stringify(myJson)
-  }
-  </script>
-
-  <p>...After the script.</p>
-
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      axios.get('https://' + window.location.hostname)
+        .then(function (response) {
+          document.getElementById('output').innerHTML = response.data.map(function (output) {
+            return (
+              output
+            );
+          }).join('');
+        })
+        .catch(function (err) {
+          document.getElementById('output').innerHTML = err.message;
+        });
+    </script>
+  </body>
 </html>
