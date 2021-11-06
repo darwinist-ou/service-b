@@ -11,17 +11,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-      axios.get('https://' + window.location.hostname)
-        .then(function (response) {
-          document.getElementById('output').innerHTML = response.data.map(function (output) {
-            return (
-              output
-            );
-          }).join('');
-        })
-        .catch(function (err) {
-          document.getElementById('output').innerHTML = err.message;
-        });
+        axios.get('/bezkoder.com/tutorials')
+          .then(function (response) {
+            document.getElementById('output').innerHTML = response;
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
     </script>
   </body>
 </html>
