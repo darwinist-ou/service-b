@@ -19,8 +19,8 @@ def hello():
         return_dict = {"message": "Hello World"}
     return jsonify(return_dict)
 
-@app.route("/app")
-def app():
+@app.route("/serve_app")
+def serve_app():
     return render_template("app.html")
 
 @app.route("/healthz")
