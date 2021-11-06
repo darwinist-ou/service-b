@@ -2,6 +2,7 @@ import os
 import math
 from flask import Flask
 from flask import jsonify
+from flask import render_template
 app = Flask(__name__)
 
 @app.route("/")
@@ -17,6 +18,10 @@ def hello():
     else:
         return_dict = {"message": "Hello World"}
     return jsonify(return_dict)
+
+@app.route("/app")
+def app():
+    return render_template("app.html")
 
 @app.route("/healthz")
 def healthz():
