@@ -14,7 +14,7 @@
         axios.get('https://' + window.location.hostname)
           .then(function (response) {
             var x = document.getElementById('output');
-            x.innerHTML = '<p>' + response + '</p>';
+            x.innerHTML = '<p>' + response.data + '</p>';
             console.log(response);
           })
           .catch(function (error) {
