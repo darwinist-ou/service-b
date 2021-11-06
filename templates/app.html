@@ -11,7 +11,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        axios.get('/bezkoder.com/tutorials')
+        axios.get('https://' + window.location.hostname)
           .then(function (response) {
             document.getElementById('output').innerHTML = response;
             console.log(response);
